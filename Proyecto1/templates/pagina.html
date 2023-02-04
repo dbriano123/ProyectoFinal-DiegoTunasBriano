@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block contenidoQueCambia %}
+<style>
+    .container img{
+        width: 100%;
+    }
+
+</style>
+
+<div class="container">
+
+    {% if usuario is not None and usuario.tipo == 'administrador' %}
+    <p><a href="/eliminarPagina/{{pagina.id}}">Eliminar página</a></p>
+    {% endif %}
+
+    <h2>{{pagina.titulo}}</h2>
+    <p>Creado por: {{pagina.autor}} el {{pagina.fecha}}</p>
+
+    {% if pagina.imagen %}
+    <img src="{{pagina.imagen}}" alt="{{pagina.titulo}}"/>
+    {% endif %}
+    
+    <p>{{pagina.cuerpo}}</p>
+
+
+</div>
+
+
+{% endblock %}
+

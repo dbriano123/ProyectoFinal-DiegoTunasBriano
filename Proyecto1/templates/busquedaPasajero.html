@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block contenidoQueCambia %}
+
+
+<div class="container">
+
+    <form action="/busquedaPasajero" method="POST">
+        <label>Nombre</label>
+        <input type="text" name="nombre"/>
+        {% csrf_token %}
+        <input type="submit" value="Enviar" />
+    </form>
+
+    {% if pasajeros %}
+    <table>
+        <tr>
+            <td>Nombre</td>
+            <td>Edad</td>
+        </tr>
+        {% for pasajero in pasajeros %}
+            <tr>
+                <td>{{pasajero.nombre}}</td>
+                <td>{{pasajero.edad}}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+
+
+{% endblock %}

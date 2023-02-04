@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block contenidoQueCambia %}
+
+<style>
+    label,input,textarea{
+        width: 100%;
+    }
+
+</style>
+
+<div class="container">
+
+    <p>Escribe tus datos para registrarte.</p>
+
+    <form action="/registro" method="POST">
+        <label>Nombre</label>
+        <input type="text" name="nombre"/>
+
+        <label>Email</label>
+        <input type="email" name="email"/>
+
+        <label>Usuario</label>
+        <input type="text" name="usuario"/>
+
+        <label>Clave</label>
+        <input type="password" name="clave"/>
+
+        {% csrf_token %}
+        <button type="submit">Registro</button>
+    </form>
+
+</div>
+
+
+
+{% endblock %}

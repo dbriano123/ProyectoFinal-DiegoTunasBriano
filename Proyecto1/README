@@ -1,0 +1,12 @@
+Se usa pip3 install -r requirements.txt
+
+python3 manage.py migrate
+python3 manage.py runserver
+
+
+Se generaron por defecto 2 usuarios, uno de administrador y un usuario común, el 
+administrador puede crear páginas, el usuario normal no.
+
+Usuario admin: diego / diego345
+Usuario común: usuario / usuario345
+

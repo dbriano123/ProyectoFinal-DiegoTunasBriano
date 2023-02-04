@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block contenidoQueCambia %}
+
+
+<div class="container">
+
+    <form action="/entrar" method="POST">
+
+        {%if error %}
+            <p style="color: red;">{{error}}</p>
+            <br />
+        {% endif %}
+        <label>Usuario</label>
+        <input type="text" name="usuario"/>
+        <label>Clave</label>
+        <input type="password" name="clave"/>
+        {% csrf_token %}
+        <input type="submit" value="Enviar" />
+    </form>
+
+</div>
+
+
+{% endblock %}
